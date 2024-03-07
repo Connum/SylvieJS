@@ -9,6 +9,7 @@ esbuild
       "src/storage-adapter/crypted-indexeddb-adapter.ts",
       "src/storage-adapter/opfs-adapter.ts",
       "src/storage-adapter/fs-adapter.ts",
+      "src/storage-adapter/fs-structured-adapter.ts",
     ],
     outdir: "dist",
     bundle: true,
@@ -17,7 +18,7 @@ esbuild
     minify: true,
     keepNames: true,
     format: "esm",
-    external: ["fs/promises"],
+    external: ["fs/promises","node:stream","node:readline","node:fs"],
     plugins: [dtsPlugin()],
   })
   // eslint-disable-next-line no-undef
